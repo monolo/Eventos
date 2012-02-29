@@ -1,0 +1,11 @@
+body{padding-top: 55px}
+.navbar-inner a.brand { padding: 10px; }
+.navbar-inner a.brand { padding: 10px; }
+
+/*footer*/
+footer{background-color: #353535;}
+#footer-floor{background-color: black;}
+footer h4{color: #999;}
+footer a {color: white;}
+footer ul{list-style: none; margin-left: 0;}
+footer #footer-floor h3{color: white;}

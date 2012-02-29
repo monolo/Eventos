@@ -1,0 +1,19 @@
+{% extends 'JetEventsBundle::layout.html.twig' %}
+{% block title %}Nuevo User{% endblock %}
+{% form_theme form "JetEventsBundle:Form:fields.html.twig" %}
+{% block main %}
+<h1>Nuevo User</h1>
+
+<form action="{{ path('profile_create') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <p>
+        <button class="btn btn-success" type="submit">Crear</button>
+    </p>
+</form>
+
+<a class="btn btn-info" href="{{ path('profile') }}">
+            Volver atrás
+        </a>
+
+{% endblock %}
+

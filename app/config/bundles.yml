@@ -1,0 +1,11 @@
+vich_uploader:
+    db_driver: orm
+    mappings:
+        product_image:
+            upload_dir: ~ # required
+            namer: jet_core.namer.hash
+
+fos_user:
+    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
+    firewall_name: main
+    user_class: Jet\EventsBundle\Entity\User

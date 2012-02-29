@@ -1,0 +1,11 @@
+{% block field_row %}
+          <div class="control-group">
+			{{ form_label(form) }}<!-- TODO: control-label class -->
+            <div class="controls">
+				{{ form_widget(form) }}
+              <p class="help-block">
+        {{ form_errors(form) }}
+              </p>
+            </div>
+          </div>
+{% endblock field_row %}
