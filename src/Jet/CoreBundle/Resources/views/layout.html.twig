@@ -1,69 +1,97 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{% block title %}My new bundle{% endblock %}</title>
+    <title>{% block title %}Eventum{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <!-- CDN styles -->
-    <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
-    <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet">
-    
+	<!-- Fonts -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+
+    <!-- Le styles -->
+    <link href="{{ asset('bundles/jetcore/css/bootstrap.css') }}" rel="stylesheet">
+    <style type="text/css">
+      body {
+      	padding-top: 70px;
+        padding-bottom: 40px;
+        background-color: black;
+      }
+    </style>
+    <link href="{{ asset('bundles/jetcore/css/events.css') }}" rel="stylesheet">
+
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
   </head>
 
   <body>
+<img width="100%" style="position:absolute; z-index: -1; left: 0px; top: 0px;" src="{{ asset('bundles/jetcore/img/bg.jpg') }}">
 
-    <div class="container">
-    
+
     {% include "JetCoreBundle::navbar.html.twig" %}
 
-    
-    
-      {% block container %}
-  <div class="row">
+    <div class="container" id="maincontainer">
     {% block main %}
-    <div class="span8">
-    <h1>Demo Layout</h1>
-    More @<a href="http://twitter.github.com/bootstrap">GitHub/TwitterBootstrap</a>
-</div>
-    {% endblock %}
-</div><!-- /row -->
-{% endblock %}
+      <!-- Main hero unit for a primary marketing message or call to action -->
+	<div class="row">
+		<div class="span4 marketing-claim pull-left ">
+		<h1>Party Meets 2.0!</h1>
+		</div>
+		<div class="span4 well pull-right span-login">
+		<h3>Login</h3>
+							{% block fos_user_content %}
+        					{% endblock %}
+		</div>
+	</div>
+      <div style="clear:both"></div>
+<hr class="soften">
+      <!-- Example row of columns -->
+      <div class="row well">
+        <div class="span3">
+        	<img class="bs-icon" src="{{ asset('bundles/jetcore/img/party.png') }}" width="80px">
+          <h2>Sigue la fiesta!</h2>
+           <p>Comparte vivencias de eventos pasados</p>
+        </div>
+        <div class="span4">
+        	<img class="bs-icon" src="{{ asset('bundles/jetcore/img/discover.png') }}" width="120px" style="margin-top: 17px">
+          <h2>Descubre!</h2>
+           <p>Podrás encontrar y compartir eventos que acontecen muy cerca de donde estés.</p>
+       </div>
+        <div class="span4">
+        	<img class="bs-icon" src="{{ asset('bundles/jetcore/img/offer.png') }}" width="30px" style="margin-top: 17px">
+          <h2>Promociones Especiales</h2>
+           <p>Invita a tus amigos y podrás obtener premios y ofertas especiales.</p>
+       </div>
+      </div>
 
 
-      <footer class="footer">
-        <p>footer message</p>
+{% endblock %}      
+<hr class="soften">
+      <footer>
+        <p>&copy; Eventum 2012</p>
       </footer>
 
-    </div><!-- /container -->
+    </div> <!-- /container -->
 
-
-
-    <!-- CDN Javascript
+    <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-    <script src="http://twitter.github.com/bootstrap/assets/js/jquery.js"></script>
-    <script src="http://twitter.github.com/bootstrap/assets/js/google-code-prettify/prettify.js"></script>
-    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-transition.js"></script>
-    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-alert.js"></script>
-    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-modal.js"></script>
-    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-dropdown.js"></script>
-    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-scrollspy.js"></script>
-    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-tab.js"></script>
-    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-tooltip.js"></script>
-    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-popover.js"></script>
-    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-button.js"></script>
-    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-collapse.js"></script>
-    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-carousel.js"></script>
-    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-typeahead.js"></script>
+    <script src="{{ asset('bundles/jetcore/js/jquery.js') }}"></script>
+    <script src="{{ asset('bundles/jetcore/js/bootstrap-transition.js') }}"></script>
+    <script src="{{ asset('bundles/jetcore/js/bootstrap-alert.js') }}"></script>
+    <script src="{{ asset('bundles/jetcore/js/bootstrap-modal.js') }}"></script>
+    <script src="{{ asset('bundles/jetcore/js/bootstrap-dropdown.js') }}"></script>
+    <script src="{{ asset('bundles/jetcore/js/bootstrap-scrollspy.js') }}"></script>
+    <script src="{{ asset('bundles/jetcore/js/bootstrap-tab.js') }}"></script>
+    <script src="{{ asset('bundles/jetcore/js/bootstrap-tooltip.js') }}"></script>
+    <script src="{{ asset('bundles/jetcore/js/bootstrap-popover.js') }}"></script>
+    <script src="{{ asset('bundles/jetcore/js/bootstrap-button.js') }}"></script>
+    <script src="{{ asset('bundles/jetcore/js/bootstrap-collapse.js') }}"></script>
+    <script src="{{ asset('bundles/jetcore/js/bootstrap-carousel.js') }}"></script>
+    <script src="{{ asset('bundles/jetcore/js/bootstrap-typeahead.js') }}"></script>
 
   </body>
 </html>
