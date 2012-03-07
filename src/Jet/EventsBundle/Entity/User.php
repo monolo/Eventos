@@ -1,5 +1,5 @@
 <?php
-namespace Jet\CoreBundle\Entity;
+namespace Jet\EventsBundle\Entity;
 
 use FOS\UserBundle\Entity\User as BaseUser;
 
