@@ -30,8 +30,8 @@ assetic:
     filters:
         cssrewrite: ~
         less:
-            node: /usr/local/bin/node
-            node_paths: [/home/node_modules]
+            node: %node_bin%
+            node_paths: [%node_paths%]
         yui_css:
             jar: /home/yuicompressor-2.4.7.jar
         yui_js:
